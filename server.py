@@ -10,6 +10,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def get_media():
     return send_from_directory(app.config['UPLOAD_FOLDER'], "image.png")
 
+@app.route("/api/v2/stream")
+def process_api_v2_stream():
+    return send_from_directory(app.config['UPLOAD_FOLDER'], "image.png")
 
 if __name__ == "__main__":
     app.run("0.0.0.0", 5566)
